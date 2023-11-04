@@ -2,6 +2,8 @@
 
 export default function Home() {
   return (
-    <div>Home</div>
+    <div className="text-2xl text-white p-4">
+      Home
+    </div>
   )
 }
