@@ -92,9 +92,20 @@ const getProfile = async (req, res) => {
     }
 }
 
+const logoutUser = (req, res) => {
+    try {
+        res.clearCookie('token');
+        res.json({ success: true, message: 'Logout successful' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, error: 'An error occurred while logging out' });
+    }
+};
+
 module.exports = {
     test,
     registerUser,
     loginUser,
+    logoutUser,
     getProfile
 }
